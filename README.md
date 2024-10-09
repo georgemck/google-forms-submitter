@@ -48,7 +48,18 @@ form.on('submit', function(e) {
 
   // Serialize
   let serializedData = $.param(params);
-  
+
+  //start values captured from the Network inspector tab
+  serializedData.dlut = Date.now();
+  serializedData.fvv = '1';
+  serializedData.submissionTimestamp = Date.now();
+  serializedData.fbzx = 3406713422934983683;
+  serializedData.token = 'sls1b5IBAAA.6CvJ-d5v_ZfFE82zM28zMw.f4uPOSNPrigs8qXsePbgKw';
+  serializedData.pageHistory = 0;
+  serializedData.partialResponse = '%5Bnull%2Cnull%2C%223406713422934983683%22%5D';
+  //end
+
+
   // Submit the form
   $.ajax({
     url: formURL,
